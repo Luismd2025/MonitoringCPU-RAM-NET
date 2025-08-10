@@ -51,7 +51,7 @@ kubectl
 
 5. Install the monitoring tools, in this case(prometheus, grafana, alertmanager):
    
-            helm upgrade --install prometheus-stack prometheus-community/kube-prometheus-stack \
+           helm upgrade --install prometheus-stack prometheus-community/kube-prometheus-stack \
   --namespace monitoring --create-namespace \
   --set prometheus.prometheusSpec.serviceMonitorSelectorNilUsesPods=false \
   --version <LATEST_STABLE_VERSION_HERE> # e.g., 58.1.0 from Artifact Hub
