@@ -42,17 +42,21 @@ kubectl
 # LOCAL (Minikube) DEPLOYMENT STEPS:
 
 1. Start Minikube:
+   
              minikube start --driver=qemu # Recommended for broad OS/CPU compatibility
 
-2. Point Docker environment to Minikube in order to build images directly into the Minikube VM.
+3. Point Docker environment to Minikube in order to build images directly into the Minikube VM.
+   
              eval $(minikube -p minikube docker-env)
 
-3. Install the monitoring tools, in this case(prometheus, grafana, alertmanager):
+5. Install the monitoring tools, in this case(prometheus, grafana, alertmanager):
+   
             helm upgrade --install prometheus-stack prometheus-community/kube-prometheus-stack \
   --namespace monitoring --create-namespace \
   --set prometheus.prometheusSpec.serviceMonitorSelectorNilUsesPods=false \
   --version <LATEST_STABLE_VERSION_HERE> # e.g., 58.1.0 from Artifact Hub
 
-4. apply your application folder( which contains the .ymal deployment files):
+7. apply your application folder( which contains the .ymal deployment files):
+   
         kubectl apply -f k8s/
     
