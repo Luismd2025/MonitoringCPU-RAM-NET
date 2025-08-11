@@ -75,5 +75,5 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
 
 7. apply your application folder( which contains the .ymal deployment files):
    
-        kubectl apply -f k8s/
+        kubectl apply -f kub8s/
     
