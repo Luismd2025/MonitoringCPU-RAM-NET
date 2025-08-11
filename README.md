@@ -1,5 +1,5 @@
 # SRE-Projects
-This is a repository in which I will create the SRE academy project. looking to include all the concept an aspects I learned in the SRE academy, important concepts as an example: software engineering principles and system availability.
+This is a repository in which I will create the SRE academy project. looking to include all the concept an aspects I learned in the SRE academy, important concepts as an example: software engineering principles and system availability. In this case an application that will monitor the CPU and RAM usage level and will trigger alerts in case the usage get critical levels
 
 
 
@@ -35,6 +35,19 @@ Helm
 Python 3.9+
 
 kubectl
+
+
+
+# Install Docker or Podman
+
+For podman: https://podman.io/docs/installation
+
+For docker: https://docs.docker.com/desktop/setup/install/mac-install/
+
+
+# Install MInikube
+
+https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary+download
 
 
 
