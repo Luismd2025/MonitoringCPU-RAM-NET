@@ -58,6 +58,11 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
    
              minikube start --driver=qemu # Recommended for broad OS/CPU compatibility
 
+         ------better compatibility with mac os-----------------
+             minikube start --driver=podman --container-runtime=containerd
+
+
+------this runtime sometimes gives compatibilitiy problems with mac os--------------
              minikube start --container-runtime=cri-o --driver=podman
 
 3. Point Docker environment to Minikube in order to build images directly into the Minikube VM.
