@@ -54,15 +54,17 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
 
 # LOCAL (Minikube) DEPLOYMENT STEPS:
 
-1. Start Minikube:
+1. Start Minikube: (second command uses the podman driver)
    
              minikube start --driver=qemu # Recommended for broad OS/CPU compatibility
 
-2. Point Docker environment to Minikube in order to build images directly into the Minikube VM.
-   
-             eval $(minikube -p minikube docker-env)
+             minikube start --container-runtime=cri-o --driver=podman
 
-3. Build your application container image: After making changes to app/main.py or Dockerfile, rebuild the image. The kubectl rollout restart command in the next step will ensure the new image is used.
+3. Point Docker environment to Minikube in order to build images directly into the Minikube VM.
+   
+             eval $(minikube -p minikube podman-env)
+
+4. Build your application container image: After making changes to app/main.py or Dockerfile, rebuild the image. The kubectl rollout restart command in the next step will ensure the new image is used.
 
              podman build -t cpu_ram_monitor:latest -f MYdockerfile .
 
