@@ -59,19 +59,15 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
              minikube start --driver=qemu # Recommended for broad OS/CPU compatibility
 
 
-------this runtime sometimes gives compatibilitiy problems with mac os--------------
-
-             minikube start --container-runtime=cri-o --driver=podman
-
-3. Point Docker environment to Minikube in order to build images directly into the Minikube VM.
+2. Point Docker environment to Minikube in order to build images directly into the Minikube VM.
    
              eval $(minikube -p minikube docker-env)
 
-4. Build your application container image: After making changes to app/main.py or Dockerfile, rebuild the image. The kubectl rollout restart command in the next step will ensure the new image is used.
+3. Build your application container image: After making changes to app/main.py or Dockerfile, rebuild the image. The kubectl rollout restart command in the next step will ensure the new image is used.
 
              docker build -t cpu_ram_monitor:latest -f MYdockerfile .
 
-5. Install the monitoring tools, in this case(prometheus, grafana, alertmanager, Node Exporter):
+4. Install the monitoring tools, in this case(prometheus, grafana, alertmanager, Node Exporter):
 
 helm upgrade --install progralernod-stack prometheus-community/kube-prometheus-stack \
 --namespace monitoring --create-namespace
@@ -79,7 +75,19 @@ helm upgrade --install progralernod-stack prometheus-community/kube-prometheus-s
 --version 55.5.0
 
 
-7. apply your application folder( which contains the .ymal deployment files):
+5. apply your application folder( which contains the .ymal deployment files):
    
         kubectl apply -f kub8s/
+
+
+6. Portforwarding process to access the pods and the app's WEB GUI:
+
+      Prometheus web gui:
+   
+        kubectl port-forward svc/prometheus-stack-grafana -n monitoring 3000:80
+
+      grafana weg gui:
+   
+     kubectl port-forward svc/prometheus-stack-grafana -n monitoring 3000:80
+
     
