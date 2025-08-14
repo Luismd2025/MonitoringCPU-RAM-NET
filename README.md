@@ -72,11 +72,11 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
              docker build -t cpu_ram_monitor:latest -f MYdockerfile .
 
 5. Install the monitoring tools, in this case(prometheus, grafana, alertmanager, Node Exporter):
-   
-           helm upgrade --install pro-gra-aler-nod-stack prometheus-community/kube-prometheus-stack \
-  --namespace monitoring --create-namespace \
-  --set prometheus.prometheusSpec.serviceMonitorSelectorNilUsesPods=false \
-  --version 55.5.0
+
+helm upgrade --install progralernod-stack prometheus-community/kube-prometheus-stack \
+--namespace monitoring --create-namespace
+--set prometheus.prometheusSpec.serviceMonitorSelectorNilUsesPods=false
+--version 55.5.0
 
 
 7. apply your application folder( which contains the .ymal deployment files):
