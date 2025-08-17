@@ -7,13 +7,13 @@ This is a repository in which I will create the SRE academy project. looking to 
 
 
 # Architecture
-Flask App: periodically checks a list of URLs defined in urls.yaml, exposes /status and /metrics.
+Flask App: periodically checks with the use of (Python system and process utilities) the system CPU, RAM and Network traffic
 
-Prometheus: scrapes /metrics every 10 s via a ServiceMonitor.
+Prometheus: scrapes /metrics every 1 minute via a ServiceMonitor.
 
 Grafana: visualizes metrics and latency.
 
-Alertmanager: alerts on failed URL checks; e.g. integration with Slack.
+Alertmanager: alerts on high cpu usage, high ram usage and high traffic volume in the interfaces
 
 Kubernetes: orchestrates deployment via deployment.yaml, service.yaml, etc.
 
@@ -54,12 +54,12 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
 
 # LOCAL (Minikube) DEPLOYMENT STEPS:
 
-1. Start Minikube: (second command uses the podman driver)
+1. Start Minikube: 
    
-             minikube start --driver=qemu # Recommended for broad OS/CPU compatibility
+             minikube start --driver=qemu # Recommended for compatibility
 
 
-2. Point Docker environment to Minikube in order to build images directly into the Minikube VM.
+2. Point Docker environment to Minikube in order to build images directly into the Minikube VM. If you run command (docker images) and there is not any output, you need this command:
    
              eval $(minikube -p minikube docker-env)
 
@@ -73,7 +73,7 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
             helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-stack \
   --namespace monitoring --create-namespace \
   --set prometheus.prometheusSpec.serviceMonitorSelectorNilUsesPods=false \
-  --version 55.5.0 # e.g., 58.1.0 from Artifact Hub
+  --version 55.5.0
 
 
 5. apply your application folder( which contains the .ymal deployment files):
@@ -90,5 +90,9 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
       grafana weg gui:
    
         kubectl port-forward svc/prometheus-stack-grafana -n monitoring 3000:80
+
+      Alert Manager:
+
+        kubectl --namespace monitoring port-forward svc/prometheus-kube-prometheus-alertmanager 9093:9093 &
 
     
