@@ -96,11 +96,14 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
         kubectl --namespace monitoring port-forward svc/prometheus-kube-prometheus-alertmanager 9093:9093 &
 
 7. Once the previous step is done(portforward), access the URL from you computer:
+   
 
       Prometheus UI: http://localhost:9090
+   
       Grafana UI: http://localhost:3000
           (default credentials: username: admin   password: admin or prom-operator)
           in case login fail, run command: kubectl get secret prometheus-stack-grafana -n monitoring -o jsonpath='{.data.admin-password}' | base64 --decode
+   
      Alertmanager UI: http://localhost:9093
 
     
