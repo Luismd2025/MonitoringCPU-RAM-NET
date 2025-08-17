@@ -89,6 +89,6 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
 
       grafana weg gui:
    
-     kubectl port-forward svc/prometheus-stack-grafana -n monitoring 3000:80
+        kubectl port-forward svc/prometheus-stack-grafana -n monitoring 3000:80
 
     
