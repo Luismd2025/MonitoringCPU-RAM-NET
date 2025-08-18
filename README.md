@@ -124,7 +124,7 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
      Alertmanager UI: http://localhost:9093
 
 
-   #Custom Dashboard in Grafata to visualize Metrics
+   # Custom Dashboard in Grafata to visualize Metrics
 
      Import monitoring-system-grafana-dashb/system-metrics-dashb.json into Grafana.
    
