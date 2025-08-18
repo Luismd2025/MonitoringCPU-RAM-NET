@@ -34,17 +34,7 @@ kubectl
 
 # Project Tree
 
-
-
-repo/
-├── README.md
-├── src/
-│   ├── main.py
-│   └── utils.py
-└── tests/
-    └── test_main.py
-
-
+```text
 .
 ├── application
 │   ├── app.py
