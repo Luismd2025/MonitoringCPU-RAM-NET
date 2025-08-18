@@ -93,9 +93,7 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
 
 4. Install the monitoring tools, in this case(prometheus, grafana, alertmanager, Node Exporter):
 
-
-       ```text
-
+```
 helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-stack \
 --namespace monitoring --create-namespace \
 --set prometheus.prometheusSpec.serviceMonitorSelectorNilUsesPods=false \
