@@ -89,13 +89,14 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
 
       grafana weg gui:
    
-        kubectl port-forward svc/prometheus-stack-grafana -n monitoring 3000:80
+        kubectl port-forward svc/promegralert-stack-grafana -n monitoring 3000:80
+        
 
       Alert Manager:
 
         kubectl --namespace monitoring port-forward svc/prometheus-kube-prometheus-alertmanager 9093:9093 &
 
-7. Once the previous step is done(portforward), access the URL from you computer:
+8. Once the previous step is done(portforward), access the URL from you computer:
    
 
       Prometheus UI: http://localhost:9090
