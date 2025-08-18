@@ -94,7 +94,7 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
 
       Alert Manager:
 
-        kubectl --namespace monitoring port-forward svc/prometheus-kube-prometheus-alertmanager 9093:9093 &
+        kubectl --namespace monitoring port-forward svc/promegralert-stack-kube-pr-alertmanager 9093:9093 &
 
 8. Once the previous step is done(portforward), access the URL from you computer:
    
