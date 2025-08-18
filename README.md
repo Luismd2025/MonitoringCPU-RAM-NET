@@ -83,6 +83,18 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
 
 6. Portforwarding process to access the pods and the app's WEB GUI:
 
+      The Flask monitoring application itself, to review status:
+
+      #find the pod name(it changes everytime you deploy the application) commands:
+
+       get pods --show-labels
+
+       kubectl get pods -l app=cpu-ram-monitor -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}'
+
+       kubectl port-forward $POD_NAME 8000:5000
+
+       
+
       Prometheus web gui:
    
         kubectl port-forward svc/promegralert-stack-prometheus 9090 -n monitoring
