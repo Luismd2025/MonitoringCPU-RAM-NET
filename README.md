@@ -4,8 +4,6 @@ This is a repository in which I will create the SRE academy project. looking to 
 
 
 
-
-
 # Architecture
 Flask App: periodically checks with the use of (Python system and process utilities) the system CPU, RAM and Network traffic
 
@@ -16,9 +14,6 @@ Grafana: visualizes metrics and latency.
 Alertmanager: alerts on high cpu usage, high ram usage and high traffic volume in the interfaces
 
 Kubernetes: orchestrates deployment via deployment.yaml, service.yaml, etc.
-
-
-
 
 
 
@@ -38,6 +33,7 @@ kubectl
 
 
 
+
 # Install Docker or Podman
 
 For podman: https://podman.io/docs/installation
@@ -45,9 +41,12 @@ For podman: https://podman.io/docs/installation
 For docker: https://docs.docker.com/desktop/setup/install/mac-install/
 
 
+
+
 # Install MInikube
 
 https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary+download
+
 
 
 
@@ -124,6 +123,8 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
      Alertmanager UI: http://localhost:9093
 
 
+
+
    # Custom Dashboard in Grafata to visualize Metrics
 
      Import monitoring-system-grafana-dashb/system-metrics-dashb.json into Grafana.
@@ -132,5 +133,13 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
     - Go to Dashboards > New  > Import.
     - Click "Upload JSON file" and select monitoring-system-grafana-dashb/system-metrics-dashb.json from your project directory.
         (Ensure you select Prometheus as the data source when prompted.)
+
+
+   # Alerts
+
+   Defined in kub8s/system-metrics-alerts.yml
+   This file structure uses the prometheus operator which comes with the Helm prometheus stack installed in step four.
+   Verify the alert appears in Prometheus UI at http://localhost:9090  , then go to alerts tab
+   Verify the alert appears in the Alertmanager UI at http://localhost:9093
 
     
