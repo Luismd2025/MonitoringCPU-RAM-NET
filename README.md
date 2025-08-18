@@ -165,8 +165,11 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
    # Alerts
 
    Defined in kub8s/system-metrics-alerts.yml
+   
    This file structure uses the prometheus operator which comes with the Helm prometheus stack installed in step four.
+   
    Verify the alert appears in Prometheus UI at http://localhost:9090  , then go to alerts tab
+   
    Verify the alert appears in the Alertmanager UI at http://localhost:9093
 
     
