@@ -172,7 +172,7 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
 
    Verify the alert appears in the Alertmanager UI at http://localhost:9093
 
- #  Notes
+   # Notes
 
  - This repository was created to accomplish the final task project of a practical training series developed for the SRE Academy.
  - The main purpose is to create an application that can create alerts and also be monitored in prometheus and grafana
