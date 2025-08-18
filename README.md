@@ -109,6 +109,10 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
         kubectl --namespace monitoring port-forward svc/promegralert-stack-kube-pr-alertmanager 9093:9093 &
 
 8. Once the previous step is done(portforward), access the URL from you computer:
+
+      App Status (JSON): http://localhost:8000
+
+      App Status (JSON)prometehus metrics:http://localhost:8000/metrics
    
 
       Prometheus UI: http://localhost:9090
