@@ -123,4 +123,13 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
    
      Alertmanager UI: http://localhost:9093
 
+
+   #Custom Dashboard in Grafata to visualize Metrics
+
+     Import monitoring/grafana-dashboards/uptime-dashboard.json into Grafana.
+     Navigate to your Grafana UI (http://localhost:3000).
+     Go to Dashboards > New Dashboard > Import.
+     Click "Upload JSON file" and select monitoring/grafana-dashboards/uptime-dashboard.json from your project directory.
+     Ensure you select Prometheus as the data source when prompted.
+
     
