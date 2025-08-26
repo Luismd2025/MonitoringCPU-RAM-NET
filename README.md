@@ -9,7 +9,7 @@ Flask App: periodically checks with the use of (Python system and process utilit
 
 Prometheus: scrapes /metrics every 10 seconds via a ServiceMonitor.
 
-Grafana: visualizes metrics and latency.
+Grafana: visualizes metrics, cpu, ram usage and network traffic
 
 Alertmanager: alerts on high cpu usage, high ram usage and high traffic volume in the interfaces
 
