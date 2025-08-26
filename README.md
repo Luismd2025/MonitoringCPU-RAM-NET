@@ -87,7 +87,8 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
    
              eval $(minikube -p minikube docker-env)
 
-3. Build your application container image: After making changes to app/main.py or Dockerfile, rebuild the image. The kubectl rollout restart command in the next step will ensure the new image is used.
+3. Build your application container image: After making changes to application/app.py or MYdockerfile, rebuild the image.
+   The command: kubectl rollout restart command in the next step will ensure the new image is used.
 
              docker build -t cpu_ram_monitor:latest -f MYdockerfile .
 
