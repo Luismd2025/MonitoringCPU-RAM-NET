@@ -7,7 +7,7 @@ This is a repository in which I will create the SRE academy project. looking to 
 # Architecture
 Flask App: periodically checks with the use of (Python system and process utilities) the system CPU, RAM and Network traffic
 
-Prometheus: scrapes /metrics every 1 minute via a ServiceMonitor.
+Prometheus: scrapes /metrics every 10 seconds via a ServiceMonitor.
 
 Grafana: visualizes metrics and latency.
 
