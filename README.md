@@ -77,18 +77,18 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
 
 # LOCAL (Minikube) DEPLOYMENT STEPS:
 
-1. Start Minikube: 
+1. **Start Minikube:** 
    
              minikube start --driver=qemu # Recommended for compatibility
 
 
 
-2. Point Docker environment to Minikube in order to build images directly into the Minikube VM. If you run command (docker images) and there is not any output, you need this command:
+2. **Point Docker environment to Minikube in order to build images directly into the Minikube VM**. If you run command (docker images) and there is not any output, you need this command:
    
              eval $(minikube -p minikube docker-env)
 
 
-3. Build your application container image: After making changes to application/app.py or MYdockerfile, rebuild the image.
+3. **Build your application container image:** After making changes to application/app.py or MYdockerfile, rebuild the image.
    The command: kubectl rollout restart command in the next step will ensure the new image is used.
 
              docker build -t cpu_ram_monitor:latest -f MYdockerfile .
@@ -98,7 +98,7 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
 
 
 
-4. Install the monitoring tools, in this case(prometheus, grafana, alertmanager, Node Exporter):
+4. **Install the monitoring tools, in this case(prometheus, grafana, alertmanager, Node Exporter):**
 
 ```
 helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-stack \
@@ -114,13 +114,13 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
 
 
 
-5. apply your application folder( which contains the .ymal deployment files):
+5. **apply your application folder( which contains the .ymal deployment files):**
    
         kubectl apply -f kub8s/
 
 
 
-6. Portforwarding process to access the pods and the app's WEB GUI:
+6. **Portforwarding process to access the pods and the app's WEB GUI:**
 
       The Flask monitoring application itself, to review status:
 
@@ -132,12 +132,13 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
 
        kubectl port-forward $POD_NAME 8000:5000
 
-    #remember change $POD_NAME with the real pod name got in the previous command
+
+           #remember change $POD_NAME with the real pod name got in the previous command
 
        
 
-      Prometheus web gui:
-      first review the current prometheus svc name with this command:
+      **Prometheus web gui:**
+           first review the current prometheus svc name with this command:
    
         kubectl get svc -n monitoring  
    
@@ -146,18 +147,18 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
 
         #remember change the promegralert name
 
-      grafana weg gui:
+      **grafana weg gui:**
    
         kubectl port-forward svc/promegralert-stack-grafana -n monitoring 3000:80 
         
 
-      Alert Manager:
+      **Alert Manager gui:**
 
         kubectl --namespace monitoring port-forward svc/promegralert-stack-kube-pr-alertmanager 9093:9093 & 
 
 
 
-8. Once the previous step is done(portforward), access the URL from you computer:
+8. **Once the previous step is done(portforward), access the URL from you computer:**
 
       App Status (JSON): http://localhost:8000
 
@@ -183,7 +184,7 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
     - Go to Dashboards > New  > Import.
     - Click "Upload JSON file" and select monitoring-system-grafana-dashb/system-metrics-dashb.json from your project directory.
         (Ensure you select Prometheus as the data source when prompted.)
-
+    
 
    # Alerts
 
@@ -194,13 +195,14 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
    Verify the alert appears in Prometheus UI at http://localhost:9090  , then go to alerts tab
 
    Verify the alert appears in the Alertmanager UI at http://localhost:9093
+       - the alerts will shown in the namespace="monitoring"
 
    *****####Important statement####*****
    
    by default the alerts in the file(system-metrics-alerts.yml) are set to low threathold as a test mode in order to review the alert in the alertmanager page, please consider change the value based on your needs.
 
 
-#  Optional step in case you want to send alert to SLACK (this step has extra point in case of this project academy)
+#  Optional step in case you want to send alert to SLACK (this step has extra point )
 
     Steps:
     1. Create a Slack Webhook space
@@ -219,6 +221,7 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
  - The # (ISSUES) # segment tab in this repository contains all the steps from 0 to the end with issues and steps during the process of this project creation, this can be used as a guide in case it is needed
  - This repository was created to accomplish the final task project of a practical training series developed for the SRE Academy.
  - The main purpose is to create an application that can create alerts and also be monitored in prometheus and grafana
+ - To send the alerts to slack is an optinal step which in this proyect will hace extra point in the final grade, but it is an optional step.
 
    
    
