@@ -127,11 +127,9 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
 
       #find the pod name(it changes everytime you deploy the application) commands:
 
-       get pods --show-labels
-
        kubectl get pods -l app=cpu-ram-monitor -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}'
 
-       kubectl port-forward $POD_NAME 8000:5000
+       kubectl port-forward $POD_NAME 8000:5000    #remember change $POD_NAME with the real pod name got in the previous command
 
        
 
