@@ -67,7 +67,6 @@ For docker: https://docs.docker.com/desktop/setup/install/mac-install/
 
 
 
-
 # Install MInikube
 
 https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary+download
@@ -131,27 +130,30 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
        kubectl get pods -l app=cpu-ram-monitor -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}'
    
 
-       kubectl port-forward $POD_NAME 8000:5000    #remember change $POD_NAME with the real pod name got in the previous command
+       kubectl port-forward $POD_NAME 8000:5000
+
+    #remember change $POD_NAME with the real pod name got in the previous command
 
        
 
       Prometheus web gui:
-
-   # - first review the current prometheus svc name
+      first review the current prometheus svc name with this command:
    
         kubectl get svc -n monitoring  
    
    
-        kubectl port-forward svc/promegralert-stack-prometheus 9090 -n monitoring  #remember change the promegralert name
+        kubectl port-forward svc/promegralert-stack-prometheus 9090 -n monitoring
+
+        #remember change the promegralert name
 
       grafana weg gui:
    
-        kubectl port-forward svc/promegralert-stack-grafana -n monitoring 3000:80  # remember to change the promegralert name
+        kubectl port-forward svc/promegralert-stack-grafana -n monitoring 3000:80 
         
 
       Alert Manager:
 
-        kubectl --namespace monitoring port-forward svc/promegralert-stack-kube-pr-alertmanager 9093:9093 &  # remember to change the promegralert name
+        kubectl --namespace monitoring port-forward svc/promegralert-stack-kube-pr-alertmanager 9093:9093 & 
 
 
 
@@ -198,7 +200,7 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
    by default the alerts in the file(system-metrics-alerts.yml) are set to low threathold as a test mode in order to review the alert in the alertmanager page, please consider change the value based on your needs.
 
 
-#  Optional step in case you want to send alert to SLACK 
+#  Optional step in case you want to send alert to SLACK (this step has extra point in case of this project academy)
 
     Steps:
     1. Create a Slack Webhook space
@@ -206,8 +208,8 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
        1.2 Create a new app or use an existing one.
        1.3 Enable Incoming Webhooks and create a webhook URL for the desired channel. (copy and save this URL, you will need it later)
 
-    2. In the file called: (alertmanager.yml) paste the URL you genetated in step 1.3
-       2.1 in the file (alertmanager.yml) replace this line: api_url: 'https://hooks.slack.com/services/T00000000
+    2. In the file called: (alertmanager-slack-notification.yml) paste the URL you genetated in step 1.3
+       2.1 in the file (alertmanager-slack-notification.yml) replace this line: api_url: 'https://hooks.slack.com/services/T00000000
 
 
 
