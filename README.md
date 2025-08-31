@@ -126,16 +126,21 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
       The Flask monitoring application itself, to review status:
 
       #find the pod name(it changes everytime you deploy the application) commands:
+   
 
        kubectl get pods -l app=cpu-ram-monitor -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}'
+   
 
        kubectl port-forward $POD_NAME 8000:5000    #remember change $POD_NAME with the real pod name got in the previous command
 
        
 
       Prometheus web gui:
+
+   # - first review the current prometheus svc name
    
-        kubectl get svc -n monitoring  # - first review the current prometheus svc name
+        kubectl get svc -n monitoring  
+   
    
         kubectl port-forward svc/promegralert-stack-prometheus 9090 -n monitoring  #remember change the promegralert name
 
