@@ -173,6 +173,9 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
 
    Verify the alert appears in the Alertmanager UI at http://localhost:9093
 
+   *****Important statement*****
+   by default the alerts in the file(system-metrics-alerts.yml) are set to low threathold as a test mode in order to review the alert un the alertmanager, please consider change the value based on your needs.
+
    # Notes
 
  - The # (ISSUES) # segment tab in this repository contains all the steps from 0 to the end with issues and steps during the process of this project creation, this can be used as a guide in case it is needed
