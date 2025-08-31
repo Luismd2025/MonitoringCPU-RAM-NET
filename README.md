@@ -148,7 +148,7 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
         kubectl port-forward svc/promegralert-stack-prometheus 9090 -n monitoring
    
 
-        #remember change the promegralert name
+   #remember change the promegralert name
 
       **grafana weg gui:**
    
