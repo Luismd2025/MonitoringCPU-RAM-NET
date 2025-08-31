@@ -83,9 +83,11 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
              minikube start --driver=qemu # Recommended for compatibility
 
 
+
 2. Point Docker environment to Minikube in order to build images directly into the Minikube VM. If you run command (docker images) and there is not any output, you need this command:
    
              eval $(minikube -p minikube docker-env)
+
 
 3. Build your application container image: After making changes to application/app.py or MYdockerfile, rebuild the image.
    The command: kubectl rollout restart command in the next step will ensure the new image is used.
@@ -95,7 +97,9 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
    
     you will see the image name: <cpu_ram_monitor> in the repository
 
-5. Install the monitoring tools, in this case(prometheus, grafana, alertmanager, Node Exporter):
+
+
+4. Install the monitoring tools, in this case(prometheus, grafana, alertmanager, Node Exporter):
 
 ```
 helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-stack \
@@ -108,9 +112,12 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
 
    wait for all the pods to be in running state before continue
 
+
+
 5. apply your application folder( which contains the .ymal deployment files):
    
         kubectl apply -f kub8s/
+
 
 
 6. Portforwarding process to access the pods and the app's WEB GUI:
@@ -140,7 +147,9 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
 
         kubectl --namespace monitoring port-forward svc/promegralert-stack-kube-pr-alertmanager 9093:9093 &
 
-8. Once the previous step is done(portforward), access the URL from you computer:
+
+
+7. Once the previous step is done(portforward), access the URL from you computer:
 
       App Status (JSON): http://localhost:8000
 
