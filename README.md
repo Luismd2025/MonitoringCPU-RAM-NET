@@ -42,6 +42,7 @@ kubectl
 ├── CONTRIBUTING.md
 ├── MYdockerfile
 ├── kub8s
+│   ├── alertmanager-slack-notification.yml
 │   ├── cpu-ram-in-servicemonitor.yaml
 │   ├── deployment.yaml
 │   ├── service.yaml
@@ -131,9 +132,10 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
    
 
        kubectl port-forward $POD_NAME 8000:5000
+   
 
 
-           #remember change $POD_NAME with the real pod name got in the previous command
+      #remember change $POD_NAME with the real pod name got in the previous command
 
        
 
@@ -144,6 +146,7 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
    
    
         kubectl port-forward svc/promegralert-stack-prometheus 9090 -n monitoring
+   
 
         #remember change the promegralert name
 
