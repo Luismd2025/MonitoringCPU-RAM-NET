@@ -1,0 +1,11 @@
+FROM python:3.9-slim
+WORKDIR /application
+# Copy requirements.txt directly into the WORKDIR /application
+COPY application/require.txt .
+# Now pip can find it at /application/require.txt
+RUN pip install --no-cache-dir -r require.txt
+# Copy the rest of the app/ content into the /application directory
+COPY application/ ./application/
+EXPOSE 5000
+#Launches the app using Gunicorn.Runs the app defined in app.py inside the application/ folder.
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "application.app:app", "--threads", "2"]
