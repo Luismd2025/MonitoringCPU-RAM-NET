@@ -135,18 +135,18 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
 
       Prometheus web gui:
    
-       - first review the current prometheus svc name, command: kubectl get svc -n monitoring
+        kubectl get svc -n monitoring  # - first review the current prometheus svc name
    
         kubectl port-forward svc/promegralert-stack-prometheus 9090 -n monitoring  #remember change the promegralert name
 
       grafana weg gui:
    
-        kubectl port-forward svc/promegralert-stack-grafana -n monitoring 3000:80
+        kubectl port-forward svc/promegralert-stack-grafana -n monitoring 3000:80  # remember to change the promegralert name
         
 
       Alert Manager:
 
-        kubectl --namespace monitoring port-forward svc/promegralert-stack-kube-pr-alertmanager 9093:9093 &
+        kubectl --namespace monitoring port-forward svc/promegralert-stack-kube-pr-alertmanager 9093:9093 &  # remember to change the promegralert name
 
 
 
