@@ -134,8 +134,9 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
        
 
       Prometheus web gui:
+       first review the current prometheus svc name, command: kubectl get svc -n monitoring
    
-        kubectl port-forward svc/promegralert-stack-prometheus 9090 -n monitoring
+        kubectl port-forward svc/promegralert-stack-prometheus 9090 -n monitoring  #remember change the promegralert name
 
       grafana weg gui:
    
@@ -148,7 +149,7 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
 
 
 
-7. Once the previous step is done(portforward), access the URL from you computer:
+8. Once the previous step is done(portforward), access the URL from you computer:
 
       App Status (JSON): http://localhost:8000
 
