@@ -91,9 +91,9 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
    The command: kubectl rollout restart command in the next step will ensure the new image is used.
 
              docker build -t cpu_ram_monitor:latest -f MYdockerfile .
-        #run the command: docker images
+    #run the command: docker images
    
-           you will see the image name: <cpu_ram_monitor> in the repository
+    you will see the image name: <cpu_ram_monitor> in the repository
 
 5. Install the monitoring tools, in this case(prometheus, grafana, alertmanager, Node Exporter):
 
