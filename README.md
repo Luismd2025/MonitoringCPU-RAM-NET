@@ -177,6 +177,21 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
    
    by default the alerts in the file(system-metrics-alerts.yml) are set to low threathold as a test mode in order to review the alert in the alertmanager page, please consider change the value based on your needs.
 
+
+#  Optional step in case you want to send alert to SLACK 
+
+    Steps:
+    1. Create a Slack Webhook space
+       1.1 Go to your Slack workspace and visit Slack API: Incoming Webhooks.
+       1.2 Create a new app or use an existing one.
+       1.3 Enable Incoming Webhooks and create a webhook URL for the desired channel. (copy and save this URL, you will need it later)
+
+    2. In the file called: (alertmanager.yml) paste the URL you genetated in step 1.3
+       2.1 in the file (alertmanager.yml) replace this line: api_url: 'https://hooks.slack.com/services/T00000000
+
+
+
+
    # Notes
 
  - The # (ISSUES) # segment tab in this repository contains all the steps from 0 to the end with issues and steps during the process of this project creation, this can be used as a guide in case it is needed
