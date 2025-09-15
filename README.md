@@ -62,9 +62,9 @@ kubectl
 
 # Install Docker or Podman
 
-For podman: https://podman.io/docs/installation
+For docker: https://docs.docker.com/desktop/setup/install/mac-install/ (recommended )
 
-For docker: https://docs.docker.com/desktop/setup/install/mac-install/
+For podman: https://podman.io/docs/installation
 
 
 
@@ -224,7 +224,7 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
  - The # (ISSUES) # segment tab in this repository contains all the steps from 0 to the end with issues and steps during the process of this project creation, this can be used as a guide in case it is needed
  - This repository was created to accomplish the final task project of a practical training series developed for the SRE Academy.
  - The main purpose is to create an application that can create alerts and also be monitored in prometheus and grafana
- - To send the alerts to slack is an optinal step which in this proyect will hace extra point in the final grade, but it is an optional step.
+ - ***Sending the alerts to slack*** is an optinal step which in this proyect will have extra point in the final grade, but it is an optional step.
 
    
    
