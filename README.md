@@ -1,5 +1,5 @@
 # SRE-Project: Flask application to monitor CPU, RAM and Network traffic
-This is a repository in which I will create the SRE academy project. looking to include all the concept an aspects I learned in the SRE academy, important concepts as an example: software engineering principles and system availability. In this case an application that will monitor the CPU and RAM usage level and will trigger alerts in case the usage get critical levels
+This is a repository in which I will create the SRE academy project. looking to include all the concept an aspects I learned in the SRE academy, important concepts as an example: software engineering principles and system availability. In this case an application that will monitor the CPU and RAM usage level and will trigger alerts in case the usage gets critical levels
 
 
 
@@ -62,7 +62,7 @@ kubectl
 
 # Install Docker or Podman
 
-For docker: https://docs.docker.com/desktop/setup/install/mac-install/ (recommended )
+For docker: https://docs.docker.com/desktop/setup/install/mac-install/ **(recommended )**
 
 For podman: https://podman.io/docs/installation
 
@@ -93,9 +93,9 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
    The command: kubectl rollout restart command in the next step will ensure the new image is used.
 
              docker build -t cpu_ram_monitor:latest -f MYdockerfile .
-    #run the command: docker images
+    #run the command: **docker images**
    
-    you will see the image name: <cpu_ram_monitor> in the repository
+    You will see the image name: **<cpu_ram_monitor>** in the repository
 
 
 
@@ -110,9 +110,9 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
 
 ```
 
-  to review the prometheus stack, run the command:  ***[kubectl get pods -n monitoring]***
+  To review the prometheus stack, run the command:  ***kubectl get pods -n monitoring***
 
-  wait for all the pods to be in running state before continue
+  **Important**wait for all the pods to be in running state before continue
 
 
 
@@ -136,7 +136,7 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
    
 
 
-      #remember change $POD_NAME with the real pod name got in the previous command
+      **#remember change $POD_NAME with the real pod name got in the previous command**
 
        
 
@@ -149,7 +149,7 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
         kubectl port-forward svc/promegralert-stack-prometheus 9090 -n monitoring
    
 
-        #remember change the promegralert name
+        ***#remember change: promegralert-stack-prometheus (This name changes everytime you create the deployment)***
 
       **grafana weg gui:**
    
