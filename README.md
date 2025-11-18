@@ -110,7 +110,7 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
 
 ```
 
-  to review the prometheus stack, run the command:  kubectl get pods -n monitoring
+  to review the prometheus stack, run the command:  ***[kubectl get pods -n monitoring]***
 
   wait for all the pods to be in running state before continue
 
