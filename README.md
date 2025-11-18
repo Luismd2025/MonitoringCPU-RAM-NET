@@ -21,15 +21,15 @@ Kubernetes: orchestrates deployment via deployment.yaml, service.yaml, etc.
 # Requirements
 Podman or Docker
 
-Prometheus + Grafana via Helm chart
+Prometheus + Grafana + alertmanager via Helm chart
 
 Minikube (or any Kubernetes cluster) - Consider using the --driver=qemu for broad OS/CPU compatibility.
 
-Helm
+Helm --version 65.3.1
 
 Python 3.9+
 
-kubectl
+kubectl commands
 
 
 # Project Tree
