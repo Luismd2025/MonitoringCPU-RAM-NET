@@ -206,7 +206,7 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
    by default the alerts in the file(system-metrics-alerts.yml) are set to low threathold as a test mode in order to review the alert in the alertmanager page, please consider change the value based on your needs.
 
 
-#  Optional step in case you want to send alert to SLACK (this step has extra point )
+#  Optional step in case you want to send alert to SLACK (this step provides extra points in this project )
 
     Steps:
     1. Create a Slack Webhook space
