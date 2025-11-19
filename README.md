@@ -1,4 +1,4 @@
-# SRE-Project: Flask application to monitor CPU, RAM and Network traffic
+# SRE-Project: Flask application to monitor CPU, RAM and Network traffic and send alerts
 This is a repository in which I will create the SRE academy project. looking to include all the concept an aspects I learned in the SRE academy, important concepts as an example: software engineering principles and system availability. In this case an application that will monitor the CPU, RAM and NETWORK traffic usage level and will trigger alerts in case the usage gets critical levels
 
 
@@ -78,7 +78,7 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
 
 1. **Start Minikube:** 
    
-             minikube start --driver=qemu # Recommended for compatibility
+             minikube start --driver=qemu          (in this case quemu used for better compatibility)
 
 
 
@@ -110,7 +110,7 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
 
   To review the prometheus stack, run the command:  ***kubectl get pods -n monitoring***
 
-  **Important**wait for all the pods to be in running state before continue
+  **Important** Wait for all the pods to be in running state before continue
 
 
 
