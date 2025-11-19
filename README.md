@@ -60,11 +60,9 @@ kubectl commands
 
 
 
-# Install Docker or Podman
+# Install Docker
 
 For docker: https://docs.docker.com/desktop/setup/install/mac-install/ **(recommended )**
-
-For podman: https://podman.io/docs/installation
 
 
 
