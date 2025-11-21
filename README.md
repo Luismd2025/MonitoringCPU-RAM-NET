@@ -104,6 +104,7 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
 --namespace monitoring --create-namespace \
 --set prometheus.prometheusSpec.serviceMonitorSelectorNilUsesPods=false \
 --set defaultRules.create=false \
+--values Send-alerts-to-SLACK/alertmanager-slack-notification.yml \
 --version 65.3.1
 
 ```
