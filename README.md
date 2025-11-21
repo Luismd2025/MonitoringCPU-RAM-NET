@@ -40,7 +40,8 @@ kubectl commands
 │   ├── Getting-alerts-in-SLACK.png
 │   ├── grafana-custom-dashboard.png
 │   ├── Alerts in AlertManager.png
-│   ├── more screenshot.png
+│   ├── prometheus-getting info.png
+│   ├── you will find more screenshots
 ├── Send-alerts-to-SLACK
 │   └── alertmanager-slack-notification.yml
 ├── application
