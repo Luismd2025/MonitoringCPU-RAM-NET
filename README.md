@@ -36,13 +36,15 @@ kubectl commands
 
 ```text
 .
+├── Send-alerts-to-SLACK
+│   └── alertmanager-slack-notification.yml
 ├── application
 │   ├── app.py
 │   ├── require.txt
 ├── CONTRIBUTING.md
 ├── MYdockerfile
 ├── kub8s
-│   ├── alertmanager-slack-notification.yml
+│   ├── 
 │   ├── cpu-ram-in-servicemonitor.yaml
 │   ├── deployment.yaml
 │   ├── service.yaml
@@ -206,21 +208,23 @@ helm upgrade --install promegralert-stack prometheus-community/kube-prometheus-s
 
 
 #  Optional step in case you want to send alert to SLACK (this step provides extra points in this project )
-
-    Steps:
-    1. Create a Slack Webhook space
+Steps:
     
-       1.1 Go to your Slack workspace and visit Slack API: Incoming Webhooks.
-       
-       1.2 Create a new app or use an existing one.
-       
-       1.3 Enable Incoming Webhooks and create a webhook URL for the desired channel. (copy and save this URL, you will need it later)
+1. Create a Slack Webhook space
 
-    2. In the file called: (alertmanager-slack-notification.yml) paste the URL you genetated in step 1.3
     
-       2.1 in the file (alertmanager-slack-notification.yml) replace this line: api_url: 'https://hooks.slack.com/services/T00000000
+ 1.1 Go to your Slack workspace and visit Slack API: Incoming Webhooks.
 
-   3. in the file (alertmanager-slack-notification.yml) change the channel(channel: '#all-testalerts) for the one you created in your slack
+       
+ 1.2 Create a new app or use an existing one.
+       
+ 1.3 Enable Incoming Webhooks and create a webhook URL for the desired channel. (copy and save this URL, you will need it later)
+
+2. In the file called: (alertmanager-slack-notification.yml) paste the URL you genetated in step 1.3
+    
+   2.1 in the file (alertmanager-slack-notification.yml) replace this line: api_url: 'https://hooks.slack.com/services/T00000000
+
+3. in the file (alertmanager-slack-notification.yml) change the channel(channel: '#all-testalerts) for the one you created in your slack
 
 
 
