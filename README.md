@@ -42,18 +42,18 @@ kubectl commands
 ├── application
 │   ├── app.py
 │   ├── require.txt
-├── CONTRIBUTING.md
-├── MYdockerfile
 ├── kub8s
 │   ├── 
 │   ├── cpu-ram-in-servicemonitor.yaml
 │   ├── deployment.yaml
 │   ├── service.yaml
 │   └── system-metrics-alerts.yml
-├── kubectl
-├── LICENSE.md
 ├── monitoring-system-grafana-dashb
 │   └── system-metrics-dashb.json
+├── kubectl
+├── CONTRIBUTING.md
+├── MYdockerfile
+├── LICENSE.md
 ├── .gitignore
 └── README.md
 ```
