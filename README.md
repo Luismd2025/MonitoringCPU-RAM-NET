@@ -37,6 +37,10 @@ kubectl commands
 ```text
 .
 ├── ScreenShot evidence project running
+│   ├── Getting-alerts-in-SLACK.png
+│   ├── grafana-custom-dashboard.png
+│   ├── Alerts in AlertManager.png
+│   ├── more screenshot.png
 ├── Send-alerts-to-SLACK
 │   └── alertmanager-slack-notification.yml
 ├── application
