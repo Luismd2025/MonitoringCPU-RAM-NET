@@ -36,6 +36,7 @@ kubectl commands
 
 ```text
 .
+├── ScreenShot evidence project running
 ├── Send-alerts-to-SLACK
 │   └── alertmanager-slack-notification.yml
 ├── application
