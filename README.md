@@ -86,7 +86,7 @@ https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Farm64%2Fstable%2Fbinary
 
 1. **Start Minikube:** 
    
-             minikube start --driver=qemu          (in this case quemu used for better compatibility)
+             minikube start --driver=qemu          #(in this case quemu used for better compatibility)
 
 
 
