@@ -1,6 +1,6 @@
-# Contributing to Uptime Monitor
+# Contributing to MonitoringCPU-RAM-NET
 
-Thank you for considering contributing to the Uptime Monitor project! We welcome contributions of all kinds including bug fixes, feature additions, documentation improvements, and more.
+ first at all, I really what to thank everyone for considering contributing to the MonitoringCPU-RAM-NET! In this repository we welcome contributions of all kinds, for example including bug fixes, feature additions, documentation improvements, and more.
 
 ## How to Contribute
 
