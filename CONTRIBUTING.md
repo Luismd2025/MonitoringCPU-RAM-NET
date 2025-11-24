@@ -1,8 +1,8 @@
-# Contributing to MonitoringCPU-RAM-NET
+#  For Contributing to MonitoringCPU-RAM-NET application and project
 
  First at all, I really what to thank everyone for considering contributing to the MonitoringCPU-RAM-NET! In this repository we welcome contributions of all kinds, for example including bug fixes, feature additions, and more.
 
-## Steps to Contribute in this project
+# Please follow these steps to Contribute in this project:
 
 1. **Fork the Repository**
 
@@ -30,8 +30,8 @@
 
    ```bash
    git add .
-   git commit -m "Describe your change here"
-   git push origin feature/your-feature-name
+   git commit -m " please describe your change here"
+   git push origin feature/your-feature-name in here
    ```
 
 6. **Open a Pull Request**
@@ -40,15 +40,15 @@
    * Click "Compare & pull request."
    * Provide a clear description of your changes and any relevant context.
 
-## Code Sugestions
+# Code Sugestions
 
 * Use clear and descriptive variable names.
 * Keep functions small and focused.
 * Add docstrings and comments when necessary.
 
-## Communications
+# Communications
 
 * For major features or discussions, you can go to the repositori'es ISSUE tab and create an issue there.
-* Respect the project's maintainers and community.
+* Please respect the project's maintainers and community.
 
-Thank you for helping improve MonitoringCPU-RAM-NET
+Thank you all for helping improve MonitoringCPU-RAM-NET
