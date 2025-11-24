@@ -1,18 +1,17 @@
 # Contributing to MonitoringCPU-RAM-NET
 
- first at all, I really what to thank everyone for considering contributing to the MonitoringCPU-RAM-NET! In this repository we welcome contributions of all kinds, for example including bug fixes, feature additions, documentation improvements, and more.
+ First at all, I really what to thank everyone for considering contributing to the MonitoringCPU-RAM-NET! In this repository we welcome contributions of all kinds, for example including bug fixes, feature additions, and more.
 
-## How to Contribute
+## Steps to Contribute in this project
 
 1. **Fork the Repository**
 
-   * Navigate to [https://github.com/rsergio07/uptime-monitor](https://github.com/rsergio07/uptime-monitor) and click the "Fork" button.
+   * Navigate to https://github.com/Luismd2025/MonitoringCPU-RAM-NET.git and click the "Fork" button.
 
 2. **Clone Your Fork**
 
    ```bash
-   git clone https://github.com/your-username/uptime-monitor.git
-   cd uptime-monitor
+   git clone https://github.com/Luismd2025/MonitoringCPU-RAM-NET.git
    ```
 
 3. **Create a New Branch**
@@ -41,15 +40,15 @@
    * Click "Compare & pull request."
    * Provide a clear description of your changes and any relevant context.
 
-## Code Style
+## Code Sugestions
 
 * Use clear and descriptive variable names.
 * Keep functions small and focused.
 * Add docstrings and comments when necessary.
 
-## Communication
+## Communications
 
-* For major features or discussions, consider opening an issue first.
+* For major features or discussions, you can go to the repositori'es ISSUE tab and create an issue there.
 * Respect the project's maintainers and community.
 
-Thank you for helping improve Uptime Monitor!
+Thank you for helping improve MonitoringCPU-RAM-NET
