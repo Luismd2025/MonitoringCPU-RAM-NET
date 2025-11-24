@@ -6,7 +6,7 @@
 
 1. **Fork the Repository**
 
-   * Navigate to https://github.com/Luismd2025/MonitoringCPU-RAM-NET.git and click the "Fork" button.
+   -Navigate to https://github.com/Luismd2025/MonitoringCPU-RAM-NET, then click the **Fork** button.
 
 2. **Clone Your Fork**
 
