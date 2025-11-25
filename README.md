@@ -228,7 +228,7 @@ Steps:
 
 2. In the file called: (alertmanager-slack-notification.yml) paste the URL you genetated in step 1.3
     
-   2.1 in the file (alertmanager-slack-notification.yml) replace this line: api_url: 'https://hooks.slack.com/services/T00000000
+   2.1 in the file (alertmanager-slack-notification.yml) replace this line: api_url: 'https://hooks.slack.com/services/Txxxxxxxxxxxxxxxxxxxxx
 
 3. in the file (alertmanager-slack-notification.yml) change the channel(channel: '#all-testalerts) for the one you created in your slack
 
